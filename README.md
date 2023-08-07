@@ -10,3 +10,9 @@ import re
 def solution(myString, pat):
     return len(re.findall(f'(?={pat})', myString))
 ```
+```python
+
+def solution(myString, pat):
+    index = myString.rfind(pat)
+    return myString[:index + len(pat)]
+```
