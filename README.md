@@ -29,3 +29,17 @@ def solution(strArr):
     return max(length_count.values())
 ```
 defaultdict를 사용해 문자열의 길이를 키로 하고 그 길이를 가진 문자열의 개수를 값으로 하는 사전을 생성합니다
+
+```python
+import re
+
+def solution(myStr):
+
+
+    splits = re.split('[abc]', myStr)
+
+    answer = [s for s in splits if s]
+
+
+    return answer if answer else ['EMPTY']
+```
