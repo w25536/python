@@ -2,6 +2,15 @@
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
+vim 
+
+// space를 tab으로
+:%s/    /\t/g
+ 
+// tab을 space로
+:%s/\t/    /g
+
+
 문자열 
 
 ```python
