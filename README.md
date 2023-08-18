@@ -5,7 +5,7 @@
 
 
 
-vim _h
+vim _
 
 // space를 tab으로
 :%s/    /\t/g
