@@ -1,7 +1,3 @@
 def solution(num1, num2):
-    answer = 0
+    return int(num1 / num2 * 1000)
     
-    answer = num1 / num2 *1000
-    
-    
-    return int(answer)
