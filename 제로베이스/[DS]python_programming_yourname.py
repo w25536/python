@@ -35,14 +35,6 @@ tmp = []
 print(tmp)
 
 
-class Number:
-    def __init__(self, value):
-        self.value = value
-
-    def data_type(self):
-        return type(self.value)
-
-
 # 문제 2 (10점)
 def data_type():
     
@@ -55,7 +47,6 @@ print(data_type())
 # 문제 3 (15점)
 def calc_tips():
     
-    print("못푸셨을 경우 그대로 pass")
  
 print("3번 답안")   
 print(calc_tips())
@@ -63,8 +54,8 @@ print(calc_tips())
 
 # 문제 4 (15점)
 def search_target(sentence, target):
-    pass
-    print("못푸셨을 경우 그대로 pass")
+
+    return sentence.count(target), [i for i in range(len(sentence)) if sentence.startswith(target, i)]
     
 print("4번 답안")
 
@@ -76,9 +67,10 @@ print(search_target(sentence, target))
 
 # 문제 5 (25점)#
 def div_ab(a,b):
-    pass
-    print("못푸셨을 경우 그대로 pass")
     
+    return a / b
+    
+
 print("5번 답안")
 a = 3
 b = 2  
@@ -87,9 +79,14 @@ print(div_ab(a, b))
 
 # 문제 6 (25점)
 def hanoi_sol():
-    pass
-    print("못푸셨을 경우 그대로 pass")
-   
+    def get_aux_rod(start_point, end_point):
+        towers = ['A', 'B', 'C']
+        return [tower for tower in towers if tower != start_point and tower != end_point]
+    
+    def hanoi(n, startpoint, end_point, aux_rod):
+        
+    
+    
 print("6번 답안") 
 print(hanoi_sol())
 
