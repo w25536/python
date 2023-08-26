@@ -36,21 +36,24 @@ print(tmp)
 
 
 # 문제 2 (10점)
-def data_type():
-    
-    print("못푸셨을 경우 그대로 pass")
- 
-print("2번 답안")   
-print(data_type())
+def data_type(v):
+
+    return f'list <{", ".join(map(data_type, v))}>' if isinstance(v, list) else f'tuple <{", ".join(map(data_type, v))}>' if isinstance(v, tuple) else ['int', 'float', 'str','dict'][[int, float, str, dict].index(type(v))] 
+
+
+print(data_type(1))   
+print(data_type(5.))
+print(data_type([2, 3, [2, 3], "Hello"]))
 
 
 # 문제 3 (15점)
-def calc_tips():
-    
- 
-print("3번 답안")   
-print(calc_tips())
+def calc_tips(n):
 
+    return int(n) + int(n % 1 > 0)
+
+print("3번 답안")   
+print(calc_tips(5.6))
+print(calc_tips(5.1))
 
 # 문제 4 (15점)
 def search_target(sentence, target):
@@ -67,32 +70,40 @@ print(search_target(sentence, target))
 
 # 문제 5 (25점)#
 def div_ab(a,b):
-    
-    return a / b
+  
+    return f'{a} 나누기 {b}의 결과: 몫{divmod(a, b)[0]}, 나머지{divmod(a, b)[1]}' if isinstance(a, int) and isinstance(b, int) else None
     
 
 print("5번 답안")
 a = 3
-b = 2  
+b = 2 
 print(div_ab(a, b))
 
 
 # 문제 6 (25점)
-def hanoi_sol():
+def hanoi_sol(n, start_point, end_point):
     def get_aux_rod(start_point, end_point):
         towers = ['A', 'B', 'C']
         return [tower for tower in towers if tower != start_point and tower != end_point]
     
-    def hanoi(n, startpoint, end_point, aux_rod):
+    def hanoi(n, start_point, end_point, aux_rod):
+        if n == 1:
+            print(f"{start_point} -> {end_point}")
+            return
         
-    
-    
+        hanoi(n-1, start_point, aux_rod, end_point)
+
+        print(f"{start_point} -> {end_point}")
+
+        hanoi(n-1, aux_rod, end_pint, start_point)
+
+        
 print("6번 답안") 
-print(hanoi_sol())
+print(hanoi_sol(3, 'A', 'B'))
 
 
 print("모든 문제가 끝났습니다")
-print("수고하셨습니다 :)")
+print("수고하셨습니다 :)"
 # end !
 
 # 시험이 끝난 후에는? 
