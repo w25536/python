@@ -53,8 +53,20 @@ class TestSolution(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
-
 ```
+
+most_common([n])
+Return a list of the n most common elements and their counts from the most common to the least. If n is omitted or None, most_common() returns all elements in the counter. Elements with equal counts are ordered in the order first encountered:
+
+>>>
+Counter('abracadabra').most_common(3)
+[('a', 5), ('b', 2), ('r', 2)]
+
+
+
+
+
+
 문자열 
 
 ```python
