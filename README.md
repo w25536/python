@@ -14,6 +14,47 @@ vim_
 :%s/\t/    /g
 
 
+
+Counter 
+```python
+
+import unittest
+from collections import Counter
+
+# The function to be tested
+def solution(array):
+    c = Counter(array)
+    max_freq = c.most_common()[0][1]
+    
+    if list(c.values()).count(max_freq) == 1:
+        return c.most_common()[0][0]
+    else:
+        return -1
+
+# The test class
+class TestSolution(unittest.TestCase):
+
+    def test_1(self):
+        self.assertEqual(solution([1, 2, 3, 3, 3, 4]), 3)
+
+    def test_2(self):
+        self.assertEqual(solution([1, 1, 2, 2]), -1)
+
+    def test_3(self):
+        self.assertEqual(solution([5, 5, 5, 5, 5, 9, 9, 9, 10]), 5)
+
+    def test_4(self):
+        self.assertEqual(solution([7, 8, 8, 9, 9, 9, 10, 10, 10]), -1)
+
+    def test_5(self):
+        self.assertEqual(solution([15]), 15)
+
+# If you run the script, it'll execute the tests
+if __name__ == '__main__':
+    unittest.main()
+
+
+```
 문자열 
 
 ```python
